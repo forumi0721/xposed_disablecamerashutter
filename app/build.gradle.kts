@@ -4,10 +4,10 @@ plugins {
 }
 
 android {
-    namespace = "kr.stonecold.leicacameraregionchanger"
+    namespace = "kr.stonecold.disablecamerashutter"
     compileSdk = 34
     defaultConfig {
-        applicationId = "kr.stonecold.leicacameraregionchanger"
+        applicationId = "kr.stonecold.disablecamerashutter"
         minSdk = 23
         targetSdk = 34
         versionCode = 3

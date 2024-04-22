@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LeicaCameraCountryChanger</string>
-	<string name="module_desc">Change country code in Leica Camera</string>
+    <string name="app_name">DisableCameraShutter</string>
+	<string name="module_desc">Disable camera shutter</string>
 </resources>

@@ -16,5 +16,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "LeicaCameraCountryChanger"
+rootProject.name = "DisableCameraShutter"
 include(":app")

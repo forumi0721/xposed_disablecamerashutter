@@ -15,6 +15,6 @@
             android:value="@string/module_desc" />
 		<meta-data
 			android:name="xposedscope"
-			android:value="com.android.camera" />
+			android:value="com.android.camera;com.zui.camera" />
     </application>
 </manifest>
