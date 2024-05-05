@@ -33,6 +33,25 @@ class Main : IXposedHookLoadPackage {
 				}
 			)
 		}
+
+		val classToHook2 = "com.xiaomi.camera.util.SystemProperties"
+		val functionToHook2 = "get"
+		if (lpparam.packageName.equals(packageName, true)) {
+			findAndHookMethod(
+				classToHook2,
+				lpparam.classLoader,
+				functionToHook2,
+				String::class.java,
+				object : XC_MethodHook() {
+					override fun beforeHookedMethod(param: MethodHookParam) {
+						//super.beforeHookedMethod(param)
+						if ("ro.miui.region".equals(param.args[0])) {
+							param.setResult("US")
+						}
+					}
+				}
+			)
+		}
 	}
 
     fun handleLoadComZuiCamera(lpparam: XC_LoadPackage.LoadPackageParam) {
