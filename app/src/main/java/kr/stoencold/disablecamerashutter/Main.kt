@@ -13,6 +13,7 @@ class Main : IXposedHookLoadPackage {
 
 		handleLoadComAndroidCamera(lpparam)
 		handleLoadComZuiCamera(lpparam)
+		handleLoadComLenovoTabCamera(lpparam)
     }
 
     fun handleLoadComAndroidCamera(lpparam: XC_LoadPackage.LoadPackageParam) {
@@ -68,6 +69,26 @@ class Main : IXposedHookLoadPackage {
 					override fun beforeHookedMethod(param: MethodHookParam) {
 						//super.beforeHookedMethod(param)
 						param.setResult(false)
+					}
+				}
+			)
+		}
+	}
+
+    fun handleLoadComLenovoTabCamera(lpparam: XC_LoadPackage.LoadPackageParam) {
+		val packageName = "com.lenovotab.camera"
+		val classToHook = "com.lenovotab.camera.common.utils.CameraUtil"
+		val functionToHook = "getCountryCode"
+
+		if (lpparam.packageName.equals(packageName, true)) {
+			findAndHookMethod(
+				classToHook,
+				lpparam.classLoader,
+				functionToHook,
+				object : XC_MethodHook() {
+					override fun beforeHookedMethod(param: MethodHookParam) {
+						//super.beforeHookedMethod(param)
+						param.setResult("US")
 					}
 				}
 			)
